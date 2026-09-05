@@ -4,8 +4,8 @@ import { Features } from "@/components/home/features";
 import { Hero } from "@/components/home/hero";
 import { SelectedWork } from "@/components/home/selected-work";
 import { Services } from "@/components/home/services";
+import { StatsBar } from "@/components/home/stats-bar";
 import { Testimonial } from "@/components/home/testimonial";
-import { TrustedBy } from "@/components/home/trusted-by";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <TrustedBy />
+        <StatsBar />
         <Services />
         <SelectedWork />
         <Features />

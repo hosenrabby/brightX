@@ -85,6 +85,18 @@ export const stackMarks = [
   "AWS",
 ] as const;
 
+export const environments = [
+  { name: "Production", status: "Live", release: "v2.4.1" },
+  { name: "Staging", status: "Healthy", release: "v2.4.2-rc" },
+  { name: "Preview", status: "Building", release: "—" },
+] as const;
+
+export const stats = [
+  { value: "40+", label: "Projects completed" },
+  { value: "98%", label: "Client satisfaction" },
+  { value: "24/7", label: "Support" },
+] as const;
+
 export const testimonial = {
   quote:
     "They treated the product like it was theirs. The first release landed on the date we agreed, and the codebase is still the one we hire into.",
