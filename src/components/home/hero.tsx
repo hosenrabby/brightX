@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { GlassCards } from "@/components/home/glass-cards";
 import { HeroWorkspace } from "@/components/home/hero-workspace";
 
 export function Hero() {
@@ -22,12 +21,12 @@ export function Hero() {
         X
       </div>
 
-      <Container className="relative grid max-w-none items-center gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.15fr)] lg:gap-10 lg:px-10 xl:gap-14 xl:px-14">
-        <div className="max-w-none lg:pr-4">
+      <Container width="10/12" className="relative grid items-center gap-10 pb-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.18fr)] lg:gap-8 xl:gap-10">
+        <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
             Product engineering studio
           </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-[3.55rem] lg:leading-[1.08]">
+          <h1 className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
             <span className="block">Engineer powerful</span>
             <span className="mt-1 block text-gold">digital products</span>
           </h1>
@@ -51,8 +50,6 @@ export function Hero() {
           <HeroWorkspace />
         </motion.div>
       </Container>
-
-      <GlassCards />
     </section>
   );
 }

@@ -1,34 +1,60 @@
 import { environments, stackMarks } from "@/lib/site";
+import { GlassCards } from "@/components/home/glass-cards";
 
 export function HeroWorkspace() {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-10 rounded-[40px] bg-[radial-gradient(circle_at_70%_20%,rgba(232,185,35,0.22),transparent_58%)]"
+        className="pointer-events-none absolute -inset-8 rounded-[40px] bg-[radial-gradient(circle_at_70%_12%,rgba(232,185,35,0.2),transparent_58%)]"
       />
-      <div className="relative rounded-[1.6rem] border border-white/12 bg-[#101014] p-2.5 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-        <div className="mb-2 flex justify-center">
-          <span className="h-1.5 w-16 rounded-full bg-white/12" />
-        </div>
-        <div className="relative overflow-hidden rounded-[1.15rem] border border-white/8 bg-[#0c0c10]">
-          <div className="grid gap-4 p-4 lg:grid-cols-[0.9fr_1.1fr] lg:p-5">
-            <EnvTable />
-            <GrowthGlass />
-          </div>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/8 bg-black/35 px-4 py-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-mute">
-              We ship on
-            </p>
-            <ul className="flex flex-wrap gap-x-4 gap-y-1">
-              {stackMarks.map((mark) => (
-                <li key={mark} className="text-xs text-ink/80">
-                  {mark}
-                </li>
-              ))}
-            </ul>
+
+      <div className="relative">
+        <div className="rounded-t-[1.35rem] border border-white/12 border-b-0 bg-[#1a1a20] p-2.5 pb-0 shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+          <div className="relative overflow-hidden rounded-t-[1.05rem] border border-white/10 border-b-0 bg-[#0b0b0f]">
+            <div className="flex items-center justify-center bg-[#121218] py-1.5">
+              <span className="h-1.5 w-14 rounded-full bg-white/14" />
+            </div>
+            <DashboardScreen />
           </div>
         </div>
+
+        <div className="relative h-3 bg-[#2a2a32]">
+          <div className="absolute inset-x-[8%] top-0 h-px bg-white/10" />
+        </div>
+        <div
+          className="mx-[-2.5%] h-3.5 rounded-b-2xl bg-[#24242c] shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
+          aria-hidden
+        >
+          <div className="mx-auto h-2 w-28 rounded-b-md bg-[#1a1a20]" />
+        </div>
+      </div>
+
+      <div className="relative z-10 -mt-2 w-full pt-6">
+        <GlassCards />
+      </div>
+    </div>
+  );
+}
+
+function DashboardScreen() {
+  return (
+    <div className="bg-[#0c0c10]">
+      <div className="grid gap-4 p-4 lg:grid-cols-[0.9fr_1.1fr] lg:p-5">
+        <EnvTable />
+        <GrowthGlass />
+      </div>
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/8 bg-black/35 px-4 py-3">
+        <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-mute">
+          We ship on
+        </p>
+        <ul className="flex flex-wrap gap-x-4 gap-y-1">
+          {stackMarks.map((mark) => (
+            <li key={mark} className="text-xs text-ink/80">
+              {mark}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

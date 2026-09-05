@@ -1,18 +1,25 @@
 import { cn } from "@/lib/cn";
 
+type ContainerWidth = "9/12" | "10/12";
+
 type ContainerProps = {
   className?: string;
   children: React.ReactNode;
+  width?: ContainerWidth;
 };
 
-export function Container({ className, children }: ContainerProps) {
+const widthClass: Record<ContainerWidth, string> = {
+  "9/12": "w-9/12",
+  "10/12": "w-10/12",
+};
+
+export function Container({
+  className,
+  children,
+  width = "9/12",
+}: ContainerProps) {
   return (
-    <div
-      className={cn(
-        "mx-auto w-full max-w-[1520px] px-4 sm:px-6 lg:px-8 xl:px-10",
-        className,
-      )}
-    >
+    <div className={cn("mx-auto", widthClass[width], className)}>
       {children}
     </div>
   );

@@ -56,7 +56,7 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <Container className="flex h-16 items-center justify-between gap-6">
+      <Container width="10/12" className="flex h-16 items-center justify-between gap-6">
         <a href="#home" className="relative z-10 shrink-0" onClick={() => setOpen(false)}>
           <Logo />
         </a>
@@ -99,7 +99,7 @@ export function Navbar() {
 
       {open ? (
         <div className="border-t border-gold/15 bg-canvas md:hidden">
-          <Container className="flex flex-col gap-1 py-4">
+          <Container width="10/12" className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
