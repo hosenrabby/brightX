@@ -1,10 +1,11 @@
 import { About } from "@/components/home/about";
 import { CtaBand } from "@/components/home/cta-band";
+import { Devices } from "@/components/home/devices";
+import { Faq } from "@/components/home/faq";
 import { Features } from "@/components/home/features";
 import { Hero } from "@/components/home/hero";
-import { SelectedWork } from "@/components/home/selected-work";
-import { Services } from "@/components/home/services";
-import { StatsBar } from "@/components/home/stats-bar";
+import { Network } from "@/components/home/network";
+import { Plans } from "@/components/home/plans";
 import { Testimonial } from "@/components/home/testimonial";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -17,12 +18,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <StatsBar />
-        <Services />
-        <SelectedWork />
         <Features />
+        <Network />
         <About />
+        <Plans />
         <Testimonial />
+        <Devices />
+        <Faq />
         <CtaBand />
       </main>
       <Footer />

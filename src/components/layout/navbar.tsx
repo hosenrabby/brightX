@@ -8,10 +8,12 @@ import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/cn";
 import { navLinks } from "@/lib/site";
 
+const sectionIds = ["home", "features", "network", "about", "plans", "devices", "faq", "contact"];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<string>("home");
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -21,7 +23,6 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const ids = ["home", "services", "work", "about", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -32,7 +33,7 @@ export function Navbar() {
       { rootMargin: "-40% 0px -50% 0px", threshold: [0.1, 0.25, 0.5] },
     );
 
-    ids.forEach((id) => {
+    sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -56,8 +57,8 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <Container width="10/12" className="flex h-16 items-center justify-between gap-6">
-        <a href="#home" className="relative z-10 shrink-0" onClick={() => setOpen(false)}>
+      <Container width="10/12" className="grid h-16 grid-cols-[1fr_auto_1fr] items-center gap-4">
+        <a href="#home" className="relative z-10 justify-self-start" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
@@ -82,13 +83,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden justify-self-end md:block">
           <Button href="#contact">Start a project</Button>
         </div>
 
         <button
           type="button"
-          className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full text-ink md:hidden"
+          className="relative z-10 col-start-3 justify-self-end inline-flex h-10 w-10 items-center justify-center rounded-full text-ink md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -110,7 +111,7 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button href="#contact" className="mt-2 w-full">
+            <Button href="#contact" className="mt-2 w-full" onClick={() => setOpen(false)}>
               Start a project
             </Button>
           </Container>

@@ -6,6 +6,7 @@ type ButtonProps = {
   className?: string;
   children: React.ReactNode;
   type?: "button" | "submit";
+  onClick?: () => void;
 };
 
 const variants = {
@@ -23,6 +24,7 @@ export function Button({
   className,
   children,
   type = "button",
+  onClick,
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold tracking-tight transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas",
@@ -32,14 +34,14 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} onClick={onClick}>
         {children}
       </a>
     );
   }
 
   return (
-    <button type={type} className={classes}>
+    <button type={type} className={classes} onClick={onClick}>
       {children}
     </button>
   );

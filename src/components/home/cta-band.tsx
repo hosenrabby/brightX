@@ -22,8 +22,8 @@ export function CtaBand() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href={`mailto:${site.email}`}>Email BrightX</Button>
-              <Button href="#services" variant="secondary">
-                Review services
+              <Button href="#features" variant="secondary">
+                Review features
               </Button>
             </div>
           </div>
