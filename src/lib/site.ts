@@ -13,6 +13,56 @@ export const navLinks = [
   { href: "#network", label: "Network", id: "network" },
 ] as const;
 
+export const services = [
+  {
+    slug: "saas",
+    title: "SaaS engineering",
+    body: "Multi-tenant products with auth, billing, dashboards, and the operational layer that keeps them alive.",
+  },
+  {
+    slug: "mobile",
+    title: "Mobile apps",
+    body: "iOS, Android, and React Native apps with store-ready polish and a backend that can scale with you.",
+  },
+  {
+    slug: "web",
+    title: "Web platforms",
+    body: "Next.js marketing sites, client portals, and admin systems that share one design language.",
+  },
+  {
+    slug: "design",
+    title: "Product design",
+    body: "Visual systems and UX that feel considered — not a theme dropped onto unfinished product.",
+  },
+] as const;
+
+export const workItems = [
+  {
+    slug: "analytics-platform",
+    title: "Helios Analytics",
+    category: "SaaS platform",
+    body: "A multi-tenant insights product: roles, reporting, and a dashboard operators actually open.",
+  },
+  {
+    slug: "field-ops",
+    title: "Northline Ops",
+    category: "Mobile + API",
+    body: "Field crews on iOS and Android, synced to a dispatch console built for the office.",
+  },
+] as const;
+
+export const environments = [
+  { name: "Production", status: "Live", release: "v2.4.1" },
+  { name: "Staging", status: "Healthy", release: "v2.4.2-rc" },
+  { name: "Preview", status: "Building", release: "—" },
+] as const;
+
+export const stats = [
+  { value: "40+", label: "Projects completed" },
+  { value: "98%", label: "Client satisfaction" },
+  { value: "24/7", label: "Support" },
+] as const;
+
 export const heroBullets = [
   "Ship SaaS and mobile products with production discipline.",
   "One BrightX studio for design, engineering, and handover.",
